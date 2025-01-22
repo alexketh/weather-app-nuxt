@@ -5,6 +5,7 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
       title: "Simple Weather App",
     },
+    baseURL: '/weather-app/'
   },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },

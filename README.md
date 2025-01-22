@@ -124,7 +124,27 @@ npm run preview
 
 ## Deployment
 
-The app can be deployed to various platforms:
+### GitHub Pages
+
+1. Update `nuxt.config.ts` with your repository name:
+```typescript
+app: {
+  baseURL: '/your-repo-name/'
+}
+```
+
+2. Set up GitHub Actions:
+- Add your OpenWeatherMap API key to your repository's secrets as `WEATHER_API_KEY`
+- The included GitHub Actions workflow will automatically deploy to GitHub Pages
+
+3. Enable GitHub Pages:
+- Go to your repository settings
+- Under "Pages", select the "gh-pages" branch as the source
+- Your site will be available at `https://yourusername.github.io/your-repo-name/`
+
+### Other Platforms
+
+The app can also be deployed to other platforms:
 
 1. Static hosting (Netlify, Vercel):
 ```bash
