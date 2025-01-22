@@ -1,75 +1,161 @@
-# Nuxt Minimal Starter
+# Weather App
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A modern weather application built with Nuxt.js that provides current weather conditions and 5-day forecasts. Features include geolocation support, temperature unit conversion, and real-time weather updates.
 
-## Setup
+## Features
 
-Make sure to install dependencies:
+- 🌡️ Current weather conditions
+- 📅 5-day weather forecast
+- 🌍 Geolocation support
+- 🔄 Temperature unit conversion (°F/°C)
+- 📱 Responsive design
+- ⚡ Real-time updates
+- 🎨 Loading states and animations
 
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- Node.js (v14 or higher)
+- npm or yarn
+- OpenWeatherMap API key
+
+## Installation
+
+1. Clone the repository:
 ```bash
-# npm
+git clone https://github.com/yourusername/weather-app.git
+cd weather-app
+```
+
+2. Install dependencies:
+```bash
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+3. Create a `.env` file in the root directory and add your OpenWeatherMap API key:
+```env
+NUXT_PUBLIC_WEATHER_API_KEY=your_api_key_here
+```
 
-Start the development server on `http://localhost:3000`:
-
+4. Start the development server:
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Project Structure
 
-Build the application for production:
+```
+weather-app/
+├── components/
+│   ├── icons/
+│   │   ├── LocationIcon.vue
+│   │   ├── SpinnerIcon.vue
+│   │   └── index.js
+│   ├── LoadingSpinner.vue
+│   ├── WeatherIcon.vue
+│   ├── UnitToggle.vue
+│   ├── WeatherSkeleton.vue
+│   └── ForecastSkeleton.vue
+├── pages/
+│   └── index.vue
+├── .env
+├── nuxt.config.ts
+└── package.json
+```
 
+## Key Components
+
+- `UnitToggle`: Handles temperature unit conversion (°F/°C)
+- `WeatherIcon`: Displays weather condition icons
+- `LoadingSpinner`: Shows loading state animations
+- `WeatherSkeleton`: Provides loading placeholder for weather data
+- `ForecastSkeleton`: Provides loading placeholder for forecast data
+
+## Features in Detail
+
+### Current Weather
+- Temperature
+- Weather condition
+- Humidity
+- Wind speed
+
+### 5-Day Forecast
+- Daily temperature
+- Weather condition
+- Weather icons
+- Date display
+
+### Geolocation
+- Automatic location detection
+- Manual city search
+- Error handling for location services
+
+### Unit Conversion
+- Fahrenheit (default)
+- Celsius
+- Persistent unit preference
+
+## API Integration
+
+This app uses the OpenWeatherMap API for weather data:
+- Current weather endpoint: `/data/2.5/weather`
+- 5-day forecast endpoint: `/data/2.5/forecast`
+
+## Error Handling
+
+The app includes comprehensive error handling for:
+- Invalid city names
+- API errors
+- Geolocation errors
+- Network issues
+- Loading states
+
+## Building for Production
+
+1. Build the application:
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
-
+2. Preview the production build:
 ```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Deployment
+
+The app can be deployed to various platforms:
+
+1. Static hosting (Netlify, Vercel):
+```bash
+npm run generate
+```
+
+2. Server hosting:
+```bash
+npm run build
+```
+
+Remember to set your environment variables on your hosting platform.
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- [OpenWeatherMap API](https://openweathermap.org/api) for weather data
+- [Nuxt.js](https://nuxt.com/) for the framework
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+
+## Support
+
+For support, please open an issue in the GitHub repository or contact the maintenance team.
